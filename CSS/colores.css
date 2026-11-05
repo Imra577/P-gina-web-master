@@ -1,24 +1,223 @@
-.ENT{background-color: #FFD6E0;}
-.DIG{background-color: #BDE0FE;}
-.ING{background-color: #D5F5E3;}
-.BDD{background-color: #FFFF00;}
-.LLMM{background-color: #FAD7A0;}
-.SI{background-color: #E8DAEF;}
-.PROG{background-color: #F5E6CC;}
-.IPE{background-color: #FFB3B3;}
-.PIDA{background-color: #A52A2A;}
-.SAS{background-color: #00FFFF;}
-.REC{background-color: #008000;}
-
-
-header, footer{
-    background-color:rgb(168, 73, 9);
-    padding: 20px;
-    color: rgb(245, 248, 245);
-    text-align: center;
+:root {
+    color-scheme: light;
+    --schedule-ink: #243248;
+    --schedule-accent: #d66b3d;
+    --schedule-accent-dark: #9f4528;
+    --schedule-paper: #fffefa;
+    --schedule-page: #f5efe6;
 }
 
-nav a {
-    color: #fffb00; /* color que quieras */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 28px clamp(16px, 4vw, 36px);
+    background:
+        radial-gradient(ellipse at 10% 12%, rgb(255 255 255 / 90%), transparent 34rem),
+        var(--schedule-page);
+    color: var(--schedule-ink);
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+header,
+footer {
+    color: var(--schedule-paper);
+    text-align: center;
+    background: linear-gradient(125deg, #783b30, var(--schedule-accent-dark) 55%, var(--schedule-accent));
+    box-shadow: 0 14px 34px rgb(75 42 25 / 16%);
+}
+
+header {
+    padding: 26px clamp(16px, 4vw, 40px);
+    border-radius: 22px;
+}
+
+header h1 {
+    margin: 0 0 18px;
+    font-size: clamp(1.55rem, 4vw, 2.1rem);
+    text-wrap: balance;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+nav > a,
+nav .menu-ejercicios summary {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-radius: 999px;
+    color: var(--schedule-paper);
+    font-weight: 600;
     text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+nav > a:hover,
+nav > a:focus-visible,
+nav .menu-ejercicios summary:hover,
+nav .menu-ejercicios summary:focus-visible {
+    background: var(--schedule-paper);
+    color: var(--schedule-accent-dark);
+}
+
+nav a:focus-visible,
+nav .menu-ejercicios summary:focus-visible {
+    outline: 3px solid #f5c66b;
+    outline-offset: 3px;
+}
+
+.menu-ejercicios {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-ejercicios summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.menu-ejercicios summary::-webkit-details-marker {
+    display: none;
+}
+
+header nav .submenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 10;
+    min-width: 170px;
+    padding: 8px;
+    border: 1px solid rgb(255 255 255 / 24%);
+    border-radius: 12px;
+    background: var(--schedule-accent-dark);
+    box-shadow: 0 10px 24px rgb(32 48 71 / 20%);
+    text-align: left;
+}
+
+header nav .submenu ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: circle;
+}
+
+header nav .submenu a {
+    display: block;
+    padding: 5px 8px;
+    border-radius: 6px;
+    color: var(--schedule-paper);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+header nav .submenu a:hover,
+header nav .submenu a:focus-visible {
+    background: rgb(255 255 255 / 14%);
+    text-decoration: underline;
+}
+
+body > h2 {
+    width: fit-content;
+    margin: 34px auto 18px;
+    color: var(--schedule-accent-dark);
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+}
+
+body > table {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-spacing: 0;
+    border: 1px solid #e6d9c9;
+    border-radius: 16px;
+    background: var(--schedule-paper);
+    box-shadow: 0 12px 30px rgb(55 42 29 / 10%);
+    table-layout: fixed;
+}
+
+body > table th,
+body > table td {
+    padding: clamp(8px, 1.5vw, 14px) clamp(5px, 1vw, 10px);
+    border: 1px solid #e6d9c9;
+    text-align: center;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+body > table th {
+    background: #754338;
+    color: var(--schedule-paper);
+    font-size: 0.95rem;
+}
+
+body > table th:first-child,
+body > table td:first-child {
+    width: 12%;
+    font-weight: 700;
+}
+
+body > table td {
+    font-size: clamp(0.72rem, 1.2vw, 0.9rem);
+}
+
+.ENT { background-color: #f3d9d4; }
+.DIG { background-color: #d8e8f4; }
+.ING { background-color: #dcecdf; }
+.BDD { background-color: #f7edc9; }
+.LLMM { background-color: #f6e1c8; }
+.SI { background-color: #e7def0; }
+.PROG { background-color: #e8dfd3; }
+.IPE { background-color: #f3d7d2; }
+.PIDA { background-color: #d8e6e1; }
+.SAS { background-color: #d8ecea; }
+.REC {
+    background: #557c61;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+footer {
+    margin-top: 36px;
+    padding: 12px 20px;
+    border-radius: 16px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 16px;
+    }
+
+    body > table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    body > table th,
+    body > table td {
+        min-width: 100px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
 }

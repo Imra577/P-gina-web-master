@@ -27,8 +27,8 @@
 			</details>
 		</nav>
   	</header>
-		<h2>Hola mundo!</h2>
-		<p>Lista de módulos de DAM</p>
+		<h2>¿Hola mundo!</h2>
+		<p>Lista de módulos que tenemos en 1 DAM</p>
 		<ul>
 			<li>Programación</li>
 			<li>BBDD</li>
@@ -42,14 +42,25 @@
 			<li>Pida</li>
 		</ul>
 		<p>
-		Visita
+		Este es un enlace para visitar Google:
 		<a href="https://www.google.com">Google</a>
 		</p>
 		<h2>Ídolo a seguir</h2>
-		<img src="Img/cr7.jpg" alt="Cristiano Ronaldo" width="300px" height="200px">
-		<a href="https://www.instagram.com/cristiano/">SIUUUUUU</a>
+		<section class="galeria" aria-label="Galería de fotos de Cristiano Ronaldo">
+			<div class="carrusel">
+				<button class="carrusel-control anterior" type="button" aria-label="Imagen anterior">&#10094;</button>
+				<img id="imagen-cr7" src="Img/cr7.jpg" alt="Cristiano Ronaldo" draggable="false">
+				<button class="carrusel-control siguiente" type="button" aria-label="Imagen siguiente">&#10095;</button>
+			</div>
+		</section>
+		<nav class="enlaces-cr7" aria-label="Redes sociales de Cristiano Ronaldo">
+			<a href="https://www.instagram.com/cristiano/">Instagram</a>
+			<a href="https://www.youtube.com/@cristiano">YouTube</a>
+			<a href="https://www.tiktok.com/@ur.cristian.cr7.ronaldoo">TikTok</a>
+		</nav>
 		<footer>
                 <p>CIFP VIRGEN DE GRACIA&copy; 2026</p>
         </footer>
+		<script src="js/galeria.js"></script>
 	</body>
 </html>
