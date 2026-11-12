@@ -1,58 +1,71 @@
-alert("Bienvenido al juego de Piedra, Papel o Tijera");
-let partidas = 0;
-let ganadas = 0;
-let perdidas = 0;
-let empates = 0;
+const estado = {
+    partidas: 0,
+    ganadas: 0,
+    perdidas: 0,
+    empates: 0
+};
 
-function escribir(valor) {
-    let pantalla = document.getElementById("pantalla");
+const opciones = ["piedra", "papel", "tijera"];
 
-    if (pantalla.value === "0") {
-        pantalla.value = valor;
-    }else {
-        pantalla.value += valor;
-    }
+function eleccionAleatoria() {
+    const indice = Math.floor(Math.random() * opciones.length);
+    return opciones[indice];
 }
 
-function piedraPapelTijera(jugador, maquina) {
-    const opciones = ["piedra", "papel", "tijera"];
-    const randomIndex = opciones[Math.floor(Math.random() * opciones.length)];
-    let mensaje;
+function actualizarMarcador() {
+    document.getElementById("partidas").textContent = estado.partidas;
+    document.getElementById("ganadas").textContent = estado.ganadas;
+    document.getElementById("perdidas").textContent = estado.perdidas;
+    document.getElementById("empates").textContent = estado.empates;
+}
 
-
+function compararJugada(jugador, maquina) {
     if (jugador === maquina) {
-        console.log("Empate");
-        empates++;
+        estado.empates++;
+        return "Empate";
     }
 
-    else if (jugador === "piedra" && maquina === "tijera" 
-        || jugador === "tijera" && maquina === "papel" 
-        || jugador === "papel" && maquina === "piedra") {
-        console.log("Gana el jugador");
-        ganadas++;
+    if (
+        (jugador === "piedra" && maquina === "tijera") ||
+        (jugador === "tijera" && maquina === "papel") ||
+        (jugador === "papel" && maquina === "piedra")
+    ) {
+        estado.ganadas++;
+        return "¡Has ganado!";
     }
 
-    else {
-        console.log("Gana la máquina");
-        perdidas++;
-    }
+    estado.perdidas++;
+    return "Has perdido";
 }
 
-document.getElementById("mensaje").textContent = mensaje;
+function jugar(eleccionJugador) {
+    const eleccionMaquina = eleccionAleatoria();
+    const resultado = compararJugada(eleccionJugador, eleccionMaquina);
+    estado.partidas++;
 
-let jugador = "piedra";
-let maquina = "tijera";
+    document.getElementById("jugador").textContent = `Tu elección: ${eleccionJugador}`;
+    document.getElementById("maquina").textContent = `Máquina: ${eleccionMaquina}`;
+    document.getElementById("mensaje").textContent = resultado;
 
-piedraPapelTijera(jugador, maquina);
+    actualizarMarcador();
+}
 
-document.getElementById("jugador").textContent =
-    `Tu elección: ${jugador}`;
-document.getElementById("maquina").textContent =
-    `Máquina: ${maquina}`;
-document.getElementById("mensaje").textContent = mensaje;
+const botones = document.querySelectorAll(".eleccion");
+botones.forEach((boton) => {
+    boton.addEventListener("click", () => {
+        jugar(boton.dataset.eleccion);
+    });
+});
 
-document.getElementById("partidas").textContent =
-    `Partidas jugadas: ${partidas}`;
-document.getElementById("ganadas").textContent = `Partidas ganadas: ${ganadas}`;
-document.getElementById("perdidas").textContent = `Partidas perdidas: ${perdidas}`;
-document.getElementById("empates").textContent = `Empates: ${empates}`;
+document.getElementById("reiniciar").addEventListener("click", () => {
+    estado.partidas = 0;
+    estado.ganadas = 0;
+    estado.perdidas = 0;
+    estado.empates = 0;
+    document.getElementById("jugador").textContent = "Tu elección: -";
+    document.getElementById("maquina").textContent = "Máquina: -";
+    document.getElementById("mensaje").textContent = "Elige una opción para empezar.";
+    actualizarMarcador();
+});
+
+actualizarMarcador();

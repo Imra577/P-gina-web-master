@@ -1,0 +1,198 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --panel-soft: #1f2937;
+    --primary: #38bdf8;
+    --accent: #fbbf24;
+    --text: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    background: linear-gradient(135deg, var(--bg), #1e293b);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: min(100%, 900px);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav > a,
+nav .menu-ejercicios summary {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 999px;
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav > a:hover,
+nav > a:focus-visible,
+nav .menu-ejercicios summary:hover,
+nav .menu-ejercicios summary:focus-visible {
+    background: var(--panel-soft);
+    color: var(--primary);
+}
+
+.menu-ejercicios {
+    position: relative;
+}
+
+.menu-ejercicios summary {
+    list-style: none;
+}
+
+.menu-ejercicios summary::-webkit-details-marker {
+    display: none;
+}
+
+.submenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 10;
+    min-width: 170px;
+    padding: 8px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 12px;
+    background: var(--panel);
+}
+
+.submenu ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.submenu a {
+    display: block;
+    padding: 5px 8px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.submenu a:hover,
+.submenu a:focus-visible {
+    color: var(--primary);
+}
+
+.juego {
+    width: min(90vw, 700px);
+    padding: 28px;
+    background: rgba(17, 24, 39, 0.9);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--primary);
+    text-align: center;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+.eleccion {
+    min-width: 130px;
+    background: var(--panel-soft);
+    color: var(--text);
+}
+
+.reiniciar {
+    background: var(--accent);
+    color: #111827;
+}
+
+.resultado {
+    margin-bottom: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: rgba(31, 41, 55, 0.7);
+    text-align: center;
+}
+
+.resultado p {
+    margin: 8px 0;
+    font-size: 1.05rem;
+}
+
+.marcador {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.stats {
+    padding: 14px;
+    border-radius: 12px;
+    background: var(--panel-soft);
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    margin-top: 6px;
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+@media (max-width: 480px) {
+    .juego {
+        padding: 20px;
+    }
+
+    .marcador {
+        grid-template-columns: 1fr 1fr;
+    }
+}

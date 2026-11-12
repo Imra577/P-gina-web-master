@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="CSS/juego.css">
+    <script src="js/juego.js"></script>
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="horario.html">Horario</a>
+            <a href="formulario.html">Formulario</a>
+            <a href="Tema3/ejemplo.html">Calculadora</a>
+            <a href="juego.html">Juego</a>
+            <details class="menu-ejercicios">
+                <summary>Ejercicios</summary>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="ACT1.html">Ejercicio 1</a></li>
+                        <li><a href="ACT2.html">Ejercicio 2</a></li>
+                        <li><a href="ACT3.html">Ejercicio 3</a></li>
+                        <li><a href="ACT1pdf2.html">Ejercicio 4</a></li>
+                        <li><a href="ACT2pdf2.html">Ejercicio 5</a></li>
+                        <li><a href="ACT3pdf2.html">Ejercicio 6</a></li>
+                    </ul>
+                </div>
+            </details>
+        </nav>
+    </header>
+
+    <main class="juego">
+        <h1>Piedra, Papel o Tijera</h1>
+
+        <div class="opciones">
+            <button class="eleccion" data-eleccion="piedra" type="button">Piedra</button>
+            <button class="eleccion" data-eleccion="papel" type="button">Papel</button>
+            <button class="eleccion" data-eleccion="tijera" type="button">Tijera</button>
+            <button class="reiniciar" id="reiniciar" type="button">Reiniciar</button>
+        </div>
+
+        <section class="resultado" aria-live="polite">
+            <p id="jugador">Tu elección: -</p>
+            <p id="maquina">Máquina: -</p>
+            <p id="mensaje">Elige una opción para empezar.</p>
+        </section>
+
+        <section class="marcador" aria-label="Marcador del juego">
+            <div class="stats">
+                <span>Partidas</span>
+                <strong id="partidas">0</strong>
+            </div>
+            <div class="stats">
+                <span>Ganadas</span>
+                <strong id="ganadas">0</strong>
+            </div>
+            <div class="stats">
+                <span>Perdidas</span>
+                <strong id="perdidas">0</strong>
+            </div>
+            <div class="stats">
+                <span>Empates</span>
+                <strong id="empates">0</strong>
+            </div>
+        </section>
+    </main>
+
+    
+</body>
+</html>
