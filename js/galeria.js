@@ -1,9 +1,9 @@
 const imagenesCr7 = [
-    "Img/cr7.jpg",
-    "Img/cr71.jpg",
-    "Img/cr72.webp",
-    "Img/cr73.jpg",
-    "Img/cr74.jpg"
+    "Img/Img/cr7.jpg",
+    "Img/Img/cr71.jpg",
+    "Img/Img/cr72.webp",
+    "Img/Img/cr73.jpg",
+    "Img/Img/cr74.jpg"
 ];
 
 const imagenCarrusel = document.querySelector("#imagen-cr7");
