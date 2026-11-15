@@ -1,0 +1,47 @@
+main {
+    max-width: 720px;
+    margin: 36px auto;
+    padding: 32px;
+    border: 1px solid #e8ded1;
+    border-radius: 20px;
+    background: #fffefa;
+    box-shadow: 0 12px 30px rgb(55 42 29 / 10%);
+    text-align: center;
+}
+
+main button {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 999px;
+    background: #9f4528;
+    color: #fffefa;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+main button:hover,
+main button:focus-visible {
+    background: #d66b3d;
+}
+
+main button:focus-visible {
+    outline: 3px solid #f5c66b;
+    outline-offset: 3px;
+}
+
+html.modo-oscuro main {
+    border-color: #59473c;
+    background: #29231f;
+    color: #f4ede5;
+}
+
+html.modo-oscuro main button {
+    background: #d66b3d;
+    color: #191613;
+}
+
+html.modo-oscuro main button:hover,
+html.modo-oscuro main button:focus-visible {
+    background: #f09262;
+}

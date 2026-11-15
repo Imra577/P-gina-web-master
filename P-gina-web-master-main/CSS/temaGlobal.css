@@ -1,0 +1,151 @@
+html.modo-oscuro {
+    color-scheme: dark;
+}
+
+html.modo-oscuro body {
+    background: #000000;
+    color: #f4ede5;
+}
+
+html.modo-oscuro header,
+html.modo-oscuro footer {
+    background: linear-gradient(125deg, #34211b, #5c3023 55%, #783b30);
+    color: #fffefa;
+}
+
+html.modo-oscuro nav > a,
+html.modo-oscuro nav .menu-ejercicios summary {
+    border-color: rgb(255 255 255 / 28%);
+    color: #fffefa;
+}
+
+html.modo-oscuro nav > a:hover,
+html.modo-oscuro nav > a:focus-visible,
+html.modo-oscuro nav .menu-ejercicios summary:hover,
+html.modo-oscuro nav .menu-ejercicios summary:focus-visible {
+    background: #fffefa;
+    color: #5c3023;
+}
+
+html.modo-oscuro header nav .submenu {
+    background: #5c3023;
+}
+
+html.modo-oscuro body > h2 {
+    color: #f09262;
+}
+
+html.modo-oscuro body > ul,
+html.modo-oscuro .juego,
+html.modo-oscuro .contenedor,
+html.modo-oscuro form fieldset,
+html.modo-oscuro body > table {
+    border-color: #59473c;
+    background: #29231f;
+    color: #f4ede5;
+}
+
+html.modo-oscuro body > ul {
+    box-shadow: 0 10px 28px rgb(0 0 0 / 28%);
+}
+
+html.modo-oscuro body > table th,
+html.modo-oscuro body > table td {
+    border-color: #59473c;
+}
+
+html.modo-oscuro body > table th {
+    background: #5c3023;
+}
+
+html.modo-oscuro body > table td.ENT,
+html.modo-oscuro body > table td.DIG,
+html.modo-oscuro body > table td.ING,
+html.modo-oscuro body > table td.BDD,
+html.modo-oscuro body > table td.LLMM,
+html.modo-oscuro body > table td.SI,
+html.modo-oscuro body > table td.PROG,
+html.modo-oscuro body > table td.IPE,
+html.modo-oscuro body > table td.PIDA,
+html.modo-oscuro body > table td.SAS {
+    background: #39312b;
+    color: #f4ede5;
+}
+
+html.modo-oscuro form fieldset legend {
+    color: #f09262;
+}
+
+html.modo-oscuro form input[type="text"],
+html.modo-oscuro form input[type="email"],
+html.modo-oscuro form textarea,
+html.modo-oscuro #pantalla {
+    border-color: #59473c;
+    background: #191613;
+    color: #f4ede5;
+}
+
+html.modo-oscuro form input[type="reset"] {
+    background: #59473c;
+    color: #f4ede5;
+}
+
+html.modo-oscuro .enlaces-cr7 a {
+    border-color: #8c5137;
+    background: #29231f;
+    color: #f4ede5;
+}
+
+html.modo-oscuro .enlaces-cr7 a:hover,
+html.modo-oscuro .enlaces-cr7 a:focus-visible {
+    background: #5c3023;
+}
+
+html.modo-oscuro .carrusel {
+    border-color: #29231f;
+    background: #39312b;
+}
+
+html.modo-oscuro .carrusel-control {
+    background: #5c3023;
+}
+
+html.modo-oscuro .juego h1 {
+    color: #f09262;
+}
+
+html.modo-oscuro .juego .eleccion,
+html.modo-oscuro .juego .stats,
+html.modo-oscuro .juego .resultado {
+    background: #39312b;
+    color: #f4ede5;
+}
+
+html.modo-oscuro .juego .reiniciar {
+    background: #d66b3d;
+    color: #191613;
+}
+
+html.modo-oscuro .juego .stats strong {
+    color: #f09262;
+}
+
+html.modo-oscuro .operacion {
+    background: #d66b3d;
+    color: #191613;
+}
+
+html.modo-oscuro .igual {
+    background: #657f68;
+    color: #fffefa;
+}
+
+html.modo-oscuro .clear {
+    background: #9f4528;
+    color: #fffefa;
+}
+
+html.modo-oscuro .carrusel-control:focus-visible,
+html.modo-oscuro button:focus-visible {
+    outline-color: #f5c66b;
+}
