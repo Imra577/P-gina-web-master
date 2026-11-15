@@ -1,10 +1,11 @@
 :root {
-    --bg: #0f172a;
-    --panel: #111827;
-    --panel-soft: #1f2937;
-    --primary: #38bdf8;
-    --accent: #fbbf24;
-    --text: #e5e7eb;
+    color-scheme: light;
+    --bg: #f5efe6;
+    --panel: #fffefa;
+    --panel-soft: #efe5d8;
+    --primary: #9f4528;
+    --accent: #d66b3d;
+    --text: #243248;
 }
 
 * {
@@ -22,13 +23,21 @@ body {
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
-    background: linear-gradient(135deg, var(--bg), #1e293b);
+    background:
+        radial-gradient(ellipse at 12% 10%, rgb(255 255 255 / 92%), transparent 34rem),
+        linear-gradient(145deg, #f5efe6, #ebe4da);
     color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     width: min(100%, 900px);
+    padding: 24px;
+    border: 1px solid rgb(255 255 255 / 25%);
+    border-radius: 22px;
+    background: linear-gradient(125deg, #783b30, #9f4528 55%, #d66b3d);
+    box-shadow: 0 14px 34px rgb(75 42 25 / 18%);
+    color: #fffefa;
 }
 
 nav {
@@ -43,9 +52,9 @@ nav > a,
 nav .menu-ejercicios summary {
     display: inline-block;
     padding: 8px 14px;
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    border: 1px solid rgb(255 255 255 / 28%);
     border-radius: 999px;
-    color: var(--text);
+    color: #fffefa;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
@@ -55,8 +64,8 @@ nav > a:hover,
 nav > a:focus-visible,
 nav .menu-ejercicios summary:hover,
 nav .menu-ejercicios summary:focus-visible {
-    background: var(--panel-soft);
-    color: var(--primary);
+    background: #fffefa;
+    color: #9f4528;
 }
 
 .menu-ejercicios {
@@ -78,9 +87,9 @@ nav .menu-ejercicios summary:focus-visible {
     z-index: 10;
     min-width: 170px;
     padding: 8px;
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    border: 1px solid rgb(255 255 255 / 24%);
     border-radius: 12px;
-    background: var(--panel);
+    background: #9f4528;
 }
 
 .submenu ul {
@@ -91,22 +100,22 @@ nav .menu-ejercicios summary:focus-visible {
 .submenu a {
     display: block;
     padding: 5px 8px;
-    color: var(--text);
+    color: #fffefa;
     text-decoration: none;
 }
 
 .submenu a:hover,
 .submenu a:focus-visible {
-    color: var(--primary);
+    color: #f5c66b;
 }
 
 .juego {
     width: min(90vw, 700px);
     padding: 28px;
-    background: rgba(17, 24, 39, 0.9);
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: rgb(255 254 250 / 90%);
+    border: 1px solid #e8ded1;
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 18px 48px rgb(55 42 29 / 14%);
 }
 
 h1 {
@@ -139,7 +148,7 @@ button:hover {
 }
 
 button:focus-visible {
-    outline: 3px solid var(--primary);
+    outline: 3px solid #f5c66b;
     outline-offset: 3px;
 }
 
@@ -151,14 +160,14 @@ button:focus-visible {
 
 .reiniciar {
     background: var(--accent);
-    color: #111827;
+    color: #243248;
 }
 
 .resultado {
     margin-bottom: 20px;
     padding: 18px;
     border-radius: 12px;
-    background: rgba(31, 41, 55, 0.7);
+    background: #f5efe6;
     text-align: center;
 }
 
